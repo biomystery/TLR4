@@ -6,8 +6,7 @@ ikkExp <-  read.csv("../expdata/ikkExp.csv",header = F)
 ikkKoSim <-  read.csv("./simData/ikkKoSim.csv",header = F)
 ikkKoExp <-  read.csv("../expdata/ikkKoExp.csv",header = F)
 
-pdf(file='fig1c.pdf', height=6, width=3.4, onefile=T, 
-    family='Helvetica', paper='letter', pointsize=8)  
+pdf(file='fig1c.pdf', onefile=T)#, pointsize=8)  
 
 
 layout(matrix(c(1,2),2,1,byrow=T),respect = F)
@@ -15,8 +14,9 @@ layout(matrix(c(1,2),2,1,byrow=T),respect = F)
 ats = seq(0,120,30)
 
 # wt IKK, sim 
-plot(ikkSim[,1],ikkSim[,3],type="l",#main="IKK activity",
-     lty=1,col="red",lwd=2,ylim=c(0,1),xlim=c(0,120),xlab="",ylab="",axes=T,frame.plot =TRUE)#Time (min)") 
+plot(ikkSim[,1],ikkSim[,3],type="l",main="LPS 1ng/ml",
+     lty=1,col="red",lwd=2,ylim=c(0,1),xlim=c(0,120),xlab="Time (min)",ylab="IKK activity",
+     axes=T,frame.plot =TRUE,font.lab = 2)#Time (min)") 
 
 Axis(side=1, labels=F)
 Axis(side=2, labels=F)
@@ -36,9 +36,9 @@ points(ikkKoExp[,7],ikkKoExp[,8],col="red",pch=16,cex=2) #tko high
 
 
 # wt IKK, sim 
-plot(ikkSim[,1],ikkSim[,2],type="l",#main="IKK activity",
-     lty=1,col="blue",lwd=2,ylim=c(0,.6),xlim=c(0,120),xlab="",ylab="",
-     axes=T,frame.plot =TRUE,xat = ats)#Time (min)")
+plot(ikkSim[,1],ikkSim[,2],type="l",main="LPS 100ng/ml",
+     lty=1,col="blue",lwd=2,ylim=c(0,.6),xlim=c(0,120),xlab="Time (min)",ylab="IKK activity",
+     axes=T,frame.plot =TRUE,font.lab = 2,)#Time (min)")
 Axis(side=1, labels=FALSE)
 Axis(side=2, labels=FALSE)
 #     ylab="Level (Normalized to Maximum)",font.lab = 2)
