@@ -90,7 +90,7 @@ i(33)  = 0.15 ;    % IKK      --> IKK_i (constitutive)  , 35
 i(34)  = 0.02  ;    % IKKi     --> IKK_off (constitutive) , 36
 
 %% ----- IRF3  module 
-%% IRF3 part
+% IRF3 part
 i(35) = 0.91476      ;        %k_a_TBK1_TRIFs, 40 
 i(36) = 0.13745    ;      %k_i_TBK1, 41
 i(37) = 1.9104    ;      %k_a_IRF_TBK1s, 43
