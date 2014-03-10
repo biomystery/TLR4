@@ -23,6 +23,6 @@ if v.SIM_TIME > 0
     
     % Interpolate Phase 2 Results
     %   This makes an array of length SIM_TIME+1 with per min values
-    v.OUTPUT = interp1(t2,r2(:,:),0:v.SIM_TIME);
+    v.OUTPUT = interp1(t2,r2(:,:),0:v.DT:v.SIM_TIME);
 end
 end

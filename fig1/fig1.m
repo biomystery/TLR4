@@ -14,7 +14,6 @@ id.dose = 100; %'1','100'
 sim{2}  = getSimData(id); % 100 ng/ml LPS 
 
 %% KOs
-id.output={'IKK'};
 
 % 3&4. mko, hi & Low
 id.genotype = 'mko';
@@ -34,22 +33,19 @@ ikknorm  = max(sim{2}(1,:)); %wt,100
 irfnorm = max(sim{2}(2,:));
 nfkbnorm  = max(sim{2}(3,:));
 
-for i = 1:2
+for i = 1:6
     sim{i}(1,:)=sim{i}(1,:)/ikknorm;
     sim{i}(2,:)=sim{i}(2,:)/irfnorm;
     sim{i}(3,:)=sim{i}(3,:)/nfkbnorm;
 end
 
-for i =3:6
-    sim{i} = sim{i}/ikknorm;
-end
 %% simort files.
 % wirte the wt ikk file 
 csvwrite('./simData/ikk.csv',[0:240;sim{1}(1,:);0:240;sim{2}(1,:)]'); %wt,ikk
 
 % ko sim
 
-csvwrite('./simData/ikkKoSim.csv',[0:240;sim{3};0:240;sim{4};0:240;sim{5};0:240;sim{6}]'); %wt,ikk
+csvwrite('./simData/ikkKoSim.csv',[0:240;sim{3}(1,:);0:240;sim{4}(1,:);0:240;sim{5}(1,:);0:240;sim{6}(1,:)]'); %wt,ikk
 
 
 csvwrite('./simData/nfIRF.csv',[sim{1}(2,:);sim{1}(3,:); ...

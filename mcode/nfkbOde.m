@@ -177,7 +177,7 @@ function delta = nfkbOde(t,x,ode_options,v)
         end
         
         %% set IKK flux
-        if(t>0)
+        if(t>=0)
             IKK_flux = IKK/(v.IKK_TOTAL*v.IP(51)); % use a unused parameters
         else 
             IKK_flux = IKK/v.IKK_TOTAL; 

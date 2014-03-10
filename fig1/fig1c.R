@@ -8,7 +8,6 @@ ikkKoExp <-  read.csv("../expdata/ikkKoExp.csv",header = F)
 
 pdf(file='fig1c.pdf', onefile=T)#, pointsize=8)  
 
-
 layout(matrix(c(1,2),2,1,byrow=T),respect = F)
 
 ats = seq(0,120,30)
