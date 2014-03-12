@@ -12,6 +12,15 @@ v.SIM_TIME     = id.sim_time; % min of stimulation phase (phase 2)v.GENOTYPE = i
 v.LPS_DOSE = id.dose*v.IP(52);
 v.INITVALUES = getInit();
 
+% update parameter
+if isfield(id,'inputPid')
+    v.IP(id.inputPid) =id.inputP;
+end
+
+if isfield(id,'inputvPid')
+    v.NP(id.inputvPid) =id.inputvP;
+end
+
 % mutant 
 switch id.genotype
   case 'mko'

@@ -85,3 +85,14 @@ title('Time of the maxmium response','color','r')
 %%save
 saveas(gca,'fig2.fig')
 saveas(gca,'fig2.pdf')
+
+
+%% peak dose 
+nfkbPeak = zeros(3,100);
+for j = 1:3 % different genotypes     
+    for i=1:100
+        [pval,ptime]=(sim{j,i}(2,:));
+            nfkbPeak(j,i) = pval; 
+            nfkbPeakTime(j,i) = (ptime-1)*id.DT;
+    end
+end
