@@ -91,8 +91,10 @@ saveas(gca,'fig2.pdf')
 nfkbPeak = zeros(3,100);
 for j = 1:3 % different genotypes     
     for i=1:100
-        [pval,ptime]=(sim{j,i}(2,:));
+        [pval,ptime]=max(sim{j,i}(2,:));
             nfkbPeak(j,i) = pval; 
             nfkbPeakTime(j,i) = (ptime-1)*id.DT;
     end
 end
+figure 
+plot(alldose,nfkbPeakTime)
