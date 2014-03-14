@@ -13,7 +13,7 @@ id.output ={'IKK','IRF3ns','NFkBn'}; %'IKK','nfkb','irf'
 % $$$  v.inputPid =51;
 % $$$  v.inputP = 1; 
 id.inputvPid =[4:6 10];
-id.inputvP = [np(4:6);37]; 
+id.inputvP = [np(4:6);25]; 
 
 sim{1}  = getSimData(id); % 1 ng/ml LPS
 
