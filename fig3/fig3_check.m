@@ -18,41 +18,33 @@ id.dose = 100;
 id.DT = .1; 
 id.sim_time = 240;
 
+id.inputvPid = 10; % np
 
-
-id.inputvPid = [4:6 10]; % np
-id.inputvP = np(id.inputvPid); 
-
-
-sim = getSimData(id); 
-
-%id.inputP = 1; 
-id.inputvP = [np(4:6); 37]; 
-sim2 = getSimData(id); 
-
+N = 10; 
+val = linspace(0,30,N) 
+colors = jet(N)
 time_seq = 0:id.DT:240; 
 h = figure('units','normalized','outerposition',[0 0 1 1])
+for j = 1:N
+    
+    id.inputvP = val(j); 
+    sim = getSimData(id); 
 
-for i = 1:41
-    subplot(6,7,i) 
-    plot(time_seq,sim(i,:))
-    hold on 
-    plot(time_seq,sim2(i,:),'r')
-    title(id.output{i})
-end
+    for i = 1:41
+        subplot(6,7,i) 
+        plot(time_seq,sim(i,:),'color',colors(j,:))
+        hold on 
+        title(id.output{i},'interpreter','none')
+    end
 
-subplot(6,7,42)
+    subplot(6,7,42)
+    plot(time_seq,sum(sim([4,9,13,17],:)),'color',colors(j,:))
+    title('Total NFkBn')
+end 
 
-plot(time_seq,sum(sim([4,9,13,17],:)))
-hold on 
-plot(time_seq,sum(sim2([4,9,13,17],:)),'r')
-title('Total NFkBn')
+saveas(gca,'check_tl_delay.fig')
 
-legend('norm','3_fold_txn+8m_delay')
-
-%saveas(gca,'fig3_check_tl_delay.fig')
-
-%set(h,'Units','Inches');
-%pos = get(h,'Position');
-%set(h,'PaperPositionMode','Auto','PaperUnits','Inches','PaperSize',[pos(3), pos(4)])
-%print(h,'fig3_check_tl_delay.pdf','-dpdf','-r0')
+set(h,'Units','Inches');
+pos = get(h,'Position');
+set(h,'PaperPositionMode','Auto','PaperUnits','Inches','PaperSize',[pos(3), pos(4)])
+print(h,'check_tl_delay.pdf','-dpdf','-r0')
