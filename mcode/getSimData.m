@@ -19,6 +19,7 @@ end
 
 if isfield(id,'inputvPid')
     v.NP(id.inputvPid) =id.inputvP;
+    disp(id.inputvPid);
 end
 
 % mutant 
