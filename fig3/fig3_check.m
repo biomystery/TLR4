@@ -27,7 +27,7 @@ id.inputvP = np(id.inputvPid);
 sim = getSimData(id); 
 
 %id.inputP = 1; 
-id.inputvP = [np(4:6)'*10 5]; 
+id.inputvP = [np(4:6); 37]; 
 sim2 = getSimData(id); 
 
 time_seq = 0:id.DT:240; 
