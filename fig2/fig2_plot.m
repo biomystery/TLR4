@@ -1,4 +1,5 @@
 clear;close all;
+addpath('../mcode')
 load ./simData/dose_scan.mat
 
 colors={[0 0 1],[0 1 0],[1 0 0]};
@@ -27,14 +28,18 @@ id.DT = 0.1;
 id.timespan = 0:.1:240; 
 
 nfkbPeakTime = zeros(3,100);
+nfkbPeak = zeros(3,100);
 nfkbHalfPeakTime = zeros(3,100);
 
 
 for j = 1:3 % different genotypes     
     for i=1:100
         [pt,hpt]=findPeakHalf(sim{j,i}(2,:),id);
-            nfkbPeakTime(j,i) = pt; 
-            nfkbHalfPeakTime(j,i) = hpt;
+        nfkbPeakTime(j,i) = pt; 
+        nfkbHalfPeakTime(j,i) = hpt;
+        [pval,~]=max(sim{j,i}(2,:));
+        nfkbPeak(j,i) = pval; 
+            
     end
 end
 
@@ -87,14 +92,7 @@ saveas(gca,'fig2.fig')
 saveas(gca,'fig2.pdf')
 
 
-%% peak dose 
-nfkbPeak = zeros(3,100);
-for j = 1:3 % different genotypes     
-    for i=1:100
-        [pval,ptime]=max(sim{j,i}(2,:));
-            nfkbPeak(j,i) = pval; 
-            nfkbPeakTime(j,i) = (ptime-1)*id.DT;
-    end
-end
+%% get nfkb peak
+
 figure 
-plot(alldose,nfkbPeakTime)
+plot(alldose,nfkbPeak)

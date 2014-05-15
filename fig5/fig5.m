@@ -65,3 +65,7 @@ ft_vary.ft = ft;
 save('./simData/ft_vary.mat','ft_vary')
 
 
+%% plot 
+fig5_plot; 
+
+

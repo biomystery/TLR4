@@ -53,9 +53,3 @@ csvwrite('./simData/nfIRF.csv',[sim{1}(2,:);sim{1}(3,:); ...
 
 % 1:2 low irf; 3:4 low nfkb; 5:6 high irf; 7:8 high nfkb
 
-%% batch 
-!R CMD BATCH ./fig1c.R
-!R CMD BATCH ./fig1d.R
-!rm *.Rout
-!rm .RDa*
-!rm .Rhi*

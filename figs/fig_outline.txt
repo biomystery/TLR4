@@ -1,0 +1,35 @@
+Figure 1. Branch-dependent population and single-cell TLR4 dynamics in macrophages.
+(A) IKK kinase and NFκB EMSA assays in BMDMs responding to 1 ng/mL and 100 ng/mL LPS. Population dynamics are persistent, where MyD88-related activity occurs earlier and more transiently, and TRIF-related activity occurs later, over a longer time scale.
+(B) Heatmap of responses in RAW264.7 macrophages tagged with EYFP-p65, where each row represents the nuclear translocation dynamics of one cell).
+(C) Fourier transforms taken of single cells (black lines) and averaged (orange line). At moderate doses, a characteristic periodic signature emerges. Peak activity in all doses occurs with a period of 2.1-2.6 hrs. 
+(D) [not done, I think it should be a small-multiples set showing or describing desynchronization]
+
+
+Figure 2. Modeling single-cell TLR4 dynamics 
+(A) Simplified reaction schema.
+[I think this is a potentially more helpful diagram than the current "module structure". Still not sure where all we should go with this figure - there definitely needs to be an introduction to how we're making the ensemble model (i.e. what we're varying), and some idea of how well it recapitulates data]
+
+
+Figure 3. The MyD88 signalsome structure causes saturation in IKK and NFκB dynamics
+(A) The maximum amplitude, generally achieved in the first peak of the LPS response, saturates within 1-2 orders of magnitude above the minimum detection level.
+(B) Quantified IKK dynamics (assayed in BMDMs, figure S4) show a similar trend: cells with the MyD88 branch show peak IKK saturation across a narrow dose range.
+(C) The MyDdosome assembly model [Do we have the source file for this still?]
+(D) The Hill coefficient vs. the effective kf/kb of MyD88 activation.
+(E) [not done, I think model fit works well - should show both IKK and NFkB saturation as a function of changing Hill]
+
+
+
+Figure 4. MyD88-dependent signaling dictates response speed.
+[nothing done - 1st peak time and "velocity" (time from baseline to first peak) in single cells vs model - similar to current "dynamic features" model, show that these quantities only change with dose in the MyD88 branch.]
+
+
+
+Figure 5. TRIF-dependent signaling is noisy, and encoded in activity duration
+(A) Integrated NFκB activity continues to increase, even at higher doses.
+(B) Plotting the average cell's duration (normalized to total lifetime) above threshold values. Higher doses, though saturated in amplitude, can be further encoded as prolonged responses.
+
+
+
+Figure 6. IRF3 signaling and secondary NFκB activity are TRIF-dependent.
+(A) Nuclear and phosphroylated nuclear IRF3 in BMDMs responding to 1 ng/mL and 100 ng/mL LPS
+[nothing else yet, but I propose holding off on the "IRF3" gel and module to this point, then show that it scales with dose very similarly to secondary NFκB activity (we have data for 50ng/mL and 500ng/mL LPS, which seems to be a good prediction/verification of "TRIF activation strength is widely distributed in a population of cells")] 

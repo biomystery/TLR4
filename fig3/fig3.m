@@ -8,7 +8,7 @@ alldose = 10.^alldose;
 
 
 hillCoeffient = [1 2:0.1:3.2];
-
+hillCoeffient = 3; %[1 2:0.1:3.2];
 
 timer = 1;
 id.DT = .1;
@@ -39,28 +39,6 @@ for k = 1:numel(hillCoeffient)
     shuttleData{k} = sim;
 end
 
-% $$$ %% michaels
-% $$$ timer =1;
-% $$$ for k = 1:1
-% $$$     % reset block 
-% $$$     id.inputP  = 1;  %hill coefficient
-% $$$     id.inputPid = 19; %id
-% $$$     id.inputvP = [];
-% $$$     id.inputvPid = [];
-% $$$ 
-% $$$     for j = 1:2 % different genotypes 
-% $$$         id.genotype = genotypes{j};
-% $$$         for i = 1:n
-% $$$             id.dose = alldose(i); %'0.1 to 100','100' 
-% $$$             id.output ={'IKK','NFkBn'};%{'IKK','IRF3ns','NFkBn'}; %'IKK','nfkb','irf'
-% $$$             sim{j,i}  = getSimData(id); %row vector
-% $$$             [tmp b] = max(sim{j,i}(1,:));
-% $$$             ikkPeakTmp(j,i) = tmp; 
-% $$$             timer = (timer + 1);
-% $$$             disp(timer/(n*2*numel(hillCoeffient))); 
-% $$$         end
-% $$$     end
-% $$$ end
 %% 
 save ./simData/simData.mat
 fig3_plot
